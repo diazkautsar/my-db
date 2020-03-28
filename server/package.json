@@ -4,14 +4,17 @@
   "description": "aplikasi mobile untuk mencatat barang-barang mu",
   "main": "app.js",
   "scripts": {
-    "dev": "NODE_ENV=development nodemon bin/http.js",
+    "dev": "NODE_ENV=development sequelize db:migrate:undo:all && sequelize db:migrate && sequelize db:seed:all && NODE_ENV=development nodemon bin/http.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Diaz Kautsar a.k.a Djalal Kurnia",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "pg": "^7.18.2",
     "sequelize": "^5.21.5"
   }
